@@ -43,7 +43,7 @@ Linux terminal (GitBash) commands
 	cp folder_1_1/file2.txt folder_1_3/file2copy.txt
 
 15. Найти файл по имени - 
-	find ~/Desktop/folder_1 -name "file1.txt"
+	find -name "file1.txt"
 
 16. Посмотреть содержимое в реальном времени - 
 	tail -f ../folder_1_2/file1.txt
