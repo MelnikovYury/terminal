@@ -65,7 +65,7 @@ Termial. HomeWork_2
     ./script.sh | grep --line-buffered row >>tf_4.txt
 
 15. Сделать текстовый файл tF_5.txt в котором будет 13 строк.
-    cat >script1.sh
+    cat >script_1.sh
     #!usr/bin/bash.exe
     for ((i=1; i<14; i++))
     do
@@ -73,7 +73,7 @@ Termial. HomeWork_2
     done
 
     ctrl+C
-    ./script1.sh | grep --line-buffered row >>tF_5.txt
+    ./script_1.sh | grep --line-buffered row >>tF_5.txt
 
 
 
@@ -109,6 +109,7 @@ Termial. HomeWork_2
     
 26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке - 
     grep -w -i -rn sec .
+
 27. Найти строки в файлах где есть комбинация букв “second” в текущей папке - 
     grep -rn second .
     
@@ -137,16 +138,16 @@ Termial. HomeWork_2
     mkdir dir_11 && >dir_11/file1.txt
     
 36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
-
+    mkdir folder_1 | find -type f -name "*.txt" | xargs grep -r -l -w sec | xargs -I{} mv {} folder_1
 
 37. Команда в одну строку. Скопировать в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
-
+    mkdir folder_2 | find -type f -name "*.txt" | xargs grep -r -l -w sec | xargs -I{} cp {} folder_2   
 
 38. Команда в одну строку. Найти все строки c “sec” во всех текстовых файлах, скопировать и вставить эти строки в один новый созданный текстовый файл.
-    find -type f -name "*.txt" | grep -rn sec --line-buffered >> result.txt
+    find -type f -name "*.txt" | xargs grep -rn sec >results_2.txt
 
-39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”
-
+39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”  
+    find -type f -name "*.txt" | xargs grep -r -l -w sec | xargs -I{} rm {}
 
 40. Просто вывести в терминал строку “Good job!!” - 
     echo "Good job!!"
